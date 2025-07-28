@@ -1,0 +1,513 @@
+/* home.component.css */
+:host {
+    display: block;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .home-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    overflow: hidden;
+    color: #e6e6e6;
+  }
+  
+  .particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .home-content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .home-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(79,70,229,0.1) 0%, transparent 70%);
+    z-index: -1;
+    animation: rotate 20s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .profile-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-glow {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5, #00d2ff);
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.4;
+    animation: glow-pulse 3s ease-in-out infinite;
+    z-index: -1;
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% { transform: scale(0.95); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.6; }
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(79, 70, 229, 0.3);
+  }
+  
+  .text-content {
+    margin-bottom: 2rem;
+  }
+  
+  .animated-text {
+    font-size: 3.5rem;
+    margin: 0.5rem 0;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5, #00d2ff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .greeting {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #a0aec0;
+  }
+  
+  .name {
+    font-weight: 700;
+  }
+  
+  .role-container {
+    height: 2.5rem;
+    margin: 1rem auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .role {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .role.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    line-height: 1.7;
+    color: #cbd5e0;
+  }
+  
+  .tech-highlight {
+    color: #00d2ff;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tech-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00d2ff, transparent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .tech-highlight:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .btn-group {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+  
+  .btn {
+    padding: 0.9rem 2rem;
+    background: linear-gradient(45deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+  }
+  
+  .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
+  }
+  
+  .btn.outline {
+    background: transparent;
+    color: #a0aec0;
+    border: 2px solid rgba(160, 174, 192, 0.3);
+  }
+  
+  .btn.outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #a0aec0;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .icon:hover {
+    background: linear-gradient(45deg, #4f46e5, #7c3aed);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+  }
+  
+  .scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #a0aec0;
+    font-size: 0.9rem;
+    z-index: 2;
+  }
+  
+  .mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(160, 174, 192, 0.3);
+    border-radius: 15px;
+    margin-top: 10px;
+    position: relative;
+  }
+  
+  .wheel {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #a0aec0;
+    border-radius: 50%;
+    animation: scroll-wheel 2s infinite;
+  }
+  
+  @keyframes scroll-wheel {
+    0% { top: 10px; opacity: 1; }
+    50% { top: 20px; opacity: 0.5; }
+    100% { top: 10px; opacity: 1; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .home-content {
+      padding: 2rem 1.5rem;
+      margin: 0 1rem;
+    }
+    
+    .animated-text {
+      font-size: 2.5rem;
+    }
+    
+    .greeting {
+      font-size: 1.4rem;
+    }
+    
+    .role {
+      font-size: 1.2rem;
+    }
+    
+    .btn-group {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .btn {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
+    
+    .profile-img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .animated-text {
+      font-size: 2rem;
+    }
+    
+    .role {
+      font-size: 1.1rem;
+    }
+    
+    .intro-text {
+      font-size: 1rem;
+    }
+    
+    .profile-img {
+      width: 110px;
+      height: 110px;
+    }
+  }
+  
+  /* Add these media queries at the end of your existing CSS */
+  
+  /* Medium devices (tablets, 768px and down) */
+  @media (max-width: 768px) {
+    .home-content {
+      padding: 2rem 1.5rem;
+      margin: 0 1rem;
+      border-radius: 20px;
+    }
+    
+    .animated-text {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+    
+    .greeting {
+      font-size: 1.4rem;
+    }
+    
+    .role {
+      font-size: 1.2rem;
+    }
+    
+    .btn-group {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .btn {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+      padding: 0.8rem;
+    }
+    
+    .profile-img {
+      width: 130px;
+      height: 130px;
+    }
+    
+    .social-icons {
+      gap: 1rem;
+    }
+    
+    .icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Small devices (landscape phones, 576px and down) */
+  @media (max-width: 576px) {
+    .home-container {
+      padding: 1rem;
+    }
+    
+    .home-content {
+      padding: 1.5rem 1rem;
+    }
+    
+    .animated-text {
+      font-size: 2.2rem;
+    }
+    
+    .role {
+      font-size: 1.1rem;
+    }
+    
+    .intro-text {
+      font-size: 1rem;
+      margin: 1rem auto;
+    }
+    
+    .profile-img {
+      width: 110px;
+      height: 110px;
+    }
+    
+    .btn {
+      font-size: 0.9rem;
+    }
+    
+    .scroll-indicator {
+      bottom: 15px;
+      font-size: 0.8rem;
+    }
+    
+    .mouse {
+      width: 25px;
+      height: 40px;
+    }
+  }
+  
+  /* Extra small devices (portrait phones, 400px and down) */
+  @media (max-width: 400px) {
+    .animated-text {
+      font-size: 1.8rem;
+    }
+    
+    .greeting {
+      font-size: 1.2rem;
+    }
+    
+    .role {
+      font-size: 1rem;
+      height: 2rem;
+    }
+    
+    .profile-img {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .btn {
+      padding: 0.7rem;
+    }
+    
+    .social-icons {
+      gap: 0.8rem;
+    }
+    
+    .icon {
+      width: 36px;
+      height: 36px;
+    }
+    
+    .home-content::before {
+      animation: none;
+    }
+    
+    .text-content {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  /* Height adjustments for landscape mode */
+  @media (max-height: 600px) and (orientation: landscape) {
+    .home-container {
+      min-height: 120vh;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    .profile-img {
+      width: 90px;
+      height: 90px;
+    }
+    
+    .animated-text {
+      font-size: 2rem;
+    }
+    
+    .role {
+      font-size: 1rem;
+    }
+    
+    .btn-group {
+      margin: 1rem 0;
+    }
+  }

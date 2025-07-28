@@ -1,0 +1,255 @@
+/* Existing styles remain the same, just adding new styles for the sudoku project */
+
+.projects-section {
+    /* width: 100%; */
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
+    
+  }
+  
+  .projects-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .projects-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  
+  .projects-header::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+    margin: 10px auto;
+    border-radius: 2px;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transform: translateY(0);
+    opacity: 0;
+    animation: fadeUp 0.8s forwards;
+  }
+  
+  .project-card:nth-child(1) { animation-delay: 0.1s; }
+  .project-card:nth-child(2) { animation-delay: 0.2s; }
+  .project-card:nth-child(3) { animation-delay: 0.3s; }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 210, 255, 0.3);
+  }
+  
+  .project-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .furniture-bg {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+  }
+  
+  .ecommerce-bg {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+  }
+  
+  .sudoku-bg {
+    background: linear-gradient(45deg, #1d976c, #93f9b9);
+  }
+  
+  .project-image i {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .project-content {
+    padding: 25px;
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #00d2ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .project-title i {
+    font-size: 1.2rem;
+    color: #3a7bd5;
+  }
+  
+  .project-description {
+    color: #c5d1eb;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  
+  .features-list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #a0b4e0;
+  }
+  
+  .features-list li {
+    margin-bottom: 8px;
+    position: relative;
+  }
+  
+  .features-list li::before {
+    content: "•";
+    color: #00d2ff;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
+  .project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  
+  .tech-badge {
+    background: rgba(58, 123, 213, 0.15);
+    color: #00d2ff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover .tech-badge {
+    background: rgba(58, 123, 213, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .project-actions {
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+  }
+  
+  .project-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .demo-btn {
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    color: white;
+  }
+  
+  .code-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #c5d1eb;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .project-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .demo-btn:hover {
+    background: linear-gradient(45deg, #00c6ff, #2a75e0);
+  }
+  
+  .code-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .projects-section {
+      padding: 30px 20px;
+    }
+    
+    .projects-header h2 {
+      font-size: 2.2rem;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .project-actions {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .projects-header h2 {
+      font-size: 1.8rem;
+    }
+    
+    .project-image {
+      height: 180px;
+    }
+  }

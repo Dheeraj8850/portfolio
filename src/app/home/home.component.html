@@ -1,0 +1,52 @@
+  <!-- home.component.html -->
+  <div class="home-container">
+    <canvas #particleCanvas class="particle-canvas"></canvas>
+    
+    <div class="home-content" @fadeInUp>
+      <div class="profile-wrapper">
+        <div class="profile-glow"></div>
+        <img src="assets/images/dheeraj.jpeg" alt="Profile" class="profile-img" />
+      </div>
+      
+      <div class="text-content">
+        <h1 class="animated-text">
+          <span class="greeting">Hello, I'm</span>
+          <span class="highlight name">Dheeraj</span>
+        </h1>
+        
+        <div class="role-container">
+          <span class="role" *ngFor="let role of roles; let i = index" 
+                [class.active]="currentRoleIndex === i">
+            {{ role }}
+          </span>
+        </div>
+        
+        <p class="intro-text">
+          Crafting elegant solutions with 
+          <span class="tech-highlight">Angular</span> & 
+          <span class="tech-highlight">Full Stack</span> technologies
+        </p>
+      </div>
+      
+      <div class="btn-group">
+        <a routerLink="/projects" class="btn">
+          <i class="fas fa-code"></i> View Projects
+        </a>
+        <a routerLink="/contact" class="btn outline">
+          <i class="fas fa-paper-plane"></i> Contact Me
+        </a>
+      </div>
+      <div class="social-icons">
+        <a href="https://github.com/Dheeraj8850" target="_blank" class="icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dheeraj-gupta-2975431a5" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank" class="icon"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </div>

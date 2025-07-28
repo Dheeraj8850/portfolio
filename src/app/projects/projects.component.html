@@ -1,0 +1,44 @@
+<section class="projects-section">
+    <div class="projects-header">
+      <h2>🚀 My Projects</h2>
+      <p>Explore my latest work and personal projects</p>
+    </div>
+  
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects">
+        <div class="project-image {{project.bgClass}}">
+          <i [class]="project.icon"></i>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">
+            <i class="fas fa-store" *ngIf="project.id === 1"></i>
+            <i class="fas fa-laptop-code" *ngIf="project.id === 2"></i>
+            <i class="fas fa-puzzle-piece" *ngIf="project.id === 3"></i>
+            {{ project.name }}
+          </h3>
+          <p class="project-description">{{ project.description }}</p>
+          
+          <ul class="features-list">
+            <li *ngFor="let feature of project.features">{{ feature }}</li>
+          </ul>
+          
+          <div class="project-technologies">
+            <span class="tech-badge" *ngFor="let tech of project.technologies">{{ tech }}</span>
+          </div>
+          
+          <div class="project-actions">
+            <a [href]="project.demoUrl || '#'" 
+               class="project-btn demo-btn"
+               target="_blank">
+              <i class="fas fa-eye"></i> Live Demo
+            </a>
+            <a [href]="project.sourceUrl || '#'" 
+               class="project-btn code-btn"
+               target="_blank">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

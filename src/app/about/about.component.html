@@ -1,0 +1,67 @@
+<section class="about-container">
+    <div class="header">
+      <h1>About Me</h1>
+      <p>Get to know my background, education, skills, and strengths</p>
+    </div>
+  
+    <div class="about-content">
+      <!-- Career Objective -->
+      <div class="section-card objective-card" @fadeIn>
+        <div class="card-header">
+          <i class="fas fa-bullseye"></i>
+          <h3>🎯 Career Objective</h3>
+        </div>
+        <div class="card-body">
+          {{ careerObjective }}
+        </div>
+      </div>
+  
+      <!-- Education -->
+      <div class="section-card" @fadeIn>
+        <div class="card-header">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>🎓 Education</h3>
+        </div>
+        <div class="card-body">
+          <div class="education-item" *ngFor="let edu of educationItems">
+            <h4>{{ edu.heading }}</h4>
+            <div class="institution">{{ edu.subheading }}</div>
+            <span class="result">{{ edu.detail }}</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Technical Skills -->
+      <div class="section-card" @fadeIn>
+        <div class="card-header">
+          <i class="fas fa-laptop-code"></i>
+          <h3>💻 Technical Skills</h3>
+        </div>
+        <div class="card-body">
+          <div class="skills-list">
+            <span class="skill-badge" *ngFor="let skill of technicalSkills">{{ skill.detail }}</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Strengths -->
+      <div class="section-card" @fadeIn>
+        <div class="card-header">
+          <i class="fas fa-star"></i>
+          <h3>💪 Strengths</h3>
+        </div>
+        <div class="card-body">
+          <ul class="strengths-list">
+            <li *ngFor="let strength of strengths">
+              <i class="fas fa-check-circle"></i> {{ strength.detail }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer">
+      <p>© {{ currentYear }} My Portfolio | Designed with <i class="fas fa-heart"></i> for developers</p>
+      <p>Connect with me: <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Twitter</a></p>
+    </div>
+  </section>
